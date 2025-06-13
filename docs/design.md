@@ -237,7 +237,9 @@ docker compose up --build
 
 Check `conf` and `/etc/hosts` for `127.0.0.1 example.com`
 
-*Image:* `![wordpressPage](../images/wordpress.png)`
+**Image:**  
+![WordPress Page](../images/wordpress.png)
+
 
 ---
 
@@ -256,7 +258,10 @@ Check `conf` and `/etc/hosts` for `127.0.0.1 example.com`
 * DNS and caching handled externally
 
 
-*Image:* `![Architecture Diagram](../images/fullMode.png)`
+**Image:**  
+![Architecture Diagram](../images/fullMode.png)
+
+
 
 ---
 
