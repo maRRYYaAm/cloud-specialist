@@ -90,9 +90,12 @@ REVPANDA/
 
 ---
 
-## Refer to Full Documentation
+## Refer to Full Practical Documentation
 
 See [`docs/design.md`](docs/design.md) for a complete breakdown of all configuration decisions, design logic, and implementation strategies.
+---
+## Refer to Full Questions Detail
+See [Assessment Questions (PDF)](../assesementQuestions.pdf)
 
 ---
 ## Note
