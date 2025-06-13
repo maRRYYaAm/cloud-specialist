@@ -1,0 +1,71 @@
+name: Laravel 
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  laravel-deploy:
+    name: Laravel Deployment Pipeline
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout code
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    # Step 2: Set up PHP and dependencies
+    - name: Set up PHP with Composer
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.2 # or specfic
+        extensions: mbstring, bcmath, intl, xml, ctype, json, curl, pdo, mysql
+        coverage: none
+
+    # Step 3: Install Composer dependencies
+    - name:  Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+    # Step 4: Copy environment and generate app key
+    - name: Set Laravel Environment
+      run: |
+        cp .env.example .env
+        php artisan key:generate
+
+    # Step5: Run Laravel tests (optional)
+    - name: Run PHPUnit Tests
+      run: php artisan test
+
+    # Step6: Set the permissions for directory 
+    - name: Directory Permissions
+      run: chmod -R 777 storage bootstrap/cache
+
+    # Step 6: Dummy Deployment (as requested)
+    - name: Dummy SSH Deploy Step
+      run: echo "Simulated deployment completed"
+
+    # Step 7: Optional real deploy via SSH (commented out)
+    # - name: Deploy to Server via SSH
+    #   uses: appleboy/ssh-action@v0.1.10
+    #   with:
+    #     host: ${{ secrets.SSH_HOST }}
+    #     username: ${{ secrets.SSH_USER }}
+    #     key: ${{ secrets.SSH_KEY }}
+    #     script: |
+    #       cd /var/www/laravel-app
+    #       git pull origin main
+    #       php artisan migrate --force
+    ############
+    # for database This step can be used:
+
+
+    # - name: Create Database
+    #   run: |
+    #     mkdir -p database
+    #     touch database/database.sqlite
+    # - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
+    #   env:
+    #     DB_CONNECTION: sqlite
+    #     DB_DATABASE: database/database.sqlite
+    #   run: php artisan test
