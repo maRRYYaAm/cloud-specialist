@@ -75,8 +75,8 @@ SSL installation can be handled by pointing the domain and using Let's Encrypt.
 
 ### References
 
-* [https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/)
-* [https://docs.nginx.com/nginx/admin-guide/web-server/web-server/](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/)
+* Nginx: [https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/)
+* Nginx: [https://docs.nginx.com/nginx/admin-guide/web-server/web-server/](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/)
 * FastCGI: /etc/nginx/fastcgi.conf, [https://nginx.org/en/docs/http/ngx\_http\_fastcgi\_module.html](https://nginx.org/en/docs/http/ngx_http_fastcgi_module.html)
 * GZIP: [https://nginx.org/en/docs/http/ngx\_http\_gzip\_module.html](https://nginx.org/en/docs/http/ngx_http_gzip_module.html)
 
